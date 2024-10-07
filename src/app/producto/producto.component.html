@@ -1,0 +1,83 @@
+<div class="container mt-5">
+  <h2 class="text-center">Creación de Productos</h2>
+  
+  <form #productoForm="ngForm" (ngSubmit)="onSubmit(productoForm)">
+    <div class="mb-3">
+      <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+      <input type="text" id="nombreProducto" class="form-control" name="nombreProducto" required placeholder="Ej: Café Americano" />
+    </div>
+    <div class="mb-3">
+      <label for="precioVenta" class="form-label">Precio de Venta</label>
+      <div class="col">
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" name="costoComponente" placeholder="Costo en COP" required pattern="^\d+(\.\d{1,2})?$" title="Por favor ingrese un monto válido" />
+        </div>
+      </div>
+          </div>
+    
+    <h5>Componentes</h5>
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" name="nombreComponente" placeholder="Nombre" required />
+      </div>
+      <div class="col">
+        <select class="form-select" name="unidadComponente" required>
+          <option value="" disabled selected>Selecciona una unidad</option>
+          <option value="kg">Kilogramo (kg)</option>
+          <option value="g">Gramo (g)</option>
+          <option value="l">Litro (l)</option>
+          <option value="ml">Mililitro (ml)</option>
+          <option value="unidad">Unidad (ud)</option>
+          <option value="m">Metro (m)</option>
+          <option value="cm">Centímetro (cm)</option>
+          <option value="mm">Milímetro (mm)</option>
+          <option value="pza">Pieza (pza)</option>
+        </select>
+      </div>
+      
+      <div class="col">
+        <input type="number" class="form-control" name="cantidadComponente" placeholder="Cantidad" required />
+      </div>
+      <div class="col">
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" name="costoComponente" placeholder="Costo en COP" required pattern="^\d+(\.\d{1,2})?$" title="Por favor ingrese un monto válido" />
+        </div>
+      </div>
+      
+      <div class="col-auto">
+        <button type="button" class="btn btn-dark" (click)="agregarComponente(productoForm.value.nombreComponente, productoForm.value.cantidadComponente, productoForm.value.unidadComponente, productoForm.value.costoComponente)">Agregar</button>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Unidad</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let componente of componentes; let i = index">
+          <td>{{ componente.nombre }}</td>
+          <td>{{ componente.cantidad }}</td>
+          <td>{{ componente.unidad }}</td>
+          <td>{{ componente.costo | currency }}</td>
+          <td>
+            <button type="button" class="btn btn-danger btn-sm" (click)="eliminarComponente(i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h4 class="mt-4">Costo Total de Producción: <span class="text-success">{{ costoTotal | currency }}</span></h4>
+
+    <div class="col-auto text-center">
+      <button type="button" class="btn btn-success btn-sm" style="font-size: 140%;" (click)="agregarComponente(productoForm.value.nombreComponente, productoForm.value.cantidadComponente, productoForm.value.unidadComponente, productoForm.value.costoComponente)">Crear Producto</button>
+    </div>
+      </form>
+</div>

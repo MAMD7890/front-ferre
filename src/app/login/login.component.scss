@@ -1,0 +1,112 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0; /* Asegúrate de que no haya padding */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    background-color: #f2f7f3;
+}
+
+.login-container {
+    display: flex;
+    height: 500px;
+    width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(167, 18, 18, 0.1);
+    overflow: hidden;
+    margin: 50px 0; /* Usa solo margenes verticales */
+    background-color: rgb(179, 174, 174); /* Color de fondo del contenedor */
+}
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #fdfdfd;
+    padding-left: 50px; /* Añadido para desplazar hacia la derecha */
+}
+
+.login-container {
+    display: flex;
+    height: 500px;
+    width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 50px; /* Mantiene el espacio superior sin afectar el centrado horizontal */
+    background-color: rgb(255, 255, 255); /* Color de fondo blanco para el contenedor */
+}
+
+
+.left-panel {
+    background: linear-gradient(to bottom right, #9d50bb, #6e48aa);
+    color: #c0c2c5;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.left-panel {
+    background: linear-gradient(to bottom right, #9d50bb, #6e48aa);
+    color: white;
+    flex: 1;
+    position: relative; /* Cambiado a 'relative' para que la imagen absoluta se posicione correctamente */
+    width: 100%;
+    height: 100%;
+}
+
+.link-black {
+    color: black; /* Cambia el color a negro */
+}
+
+.link-black:hover {
+    color: rgb(80, 78, 78); /* Cambia el color al pasar el mouse si lo deseas */
+}
+
+
+.right-panel {
+    flex: 1;
+    padding: 40px;
+    background-color: #f3f1d6;
+}
+
+.rocket {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantener 'cover' para llenar el contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1); /* Aumenta o disminuye el valor para controlar el zoom */
+}
+
+.custom-button {
+    background-color: #0f0f0f; /* Cambia este color al que desees */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Cambia el radio de borde si es necesario */
+    padding: 10px 20px; /* Ajusta el padding si es necesario */
+}
+
+.custom-button:hover {
+    background-color: #080808; /* Color de fondo al pasar el mouse */
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+
+
+
+
